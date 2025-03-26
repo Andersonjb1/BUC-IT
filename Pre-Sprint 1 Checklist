@@ -1,0 +1,35 @@
+A list of all items that we need before sprint 1 (*by the minimum required items):
+
+Quick guide on what they will do in each sprint activity
+
+Design standards (UML, ?)
+
+Checklist for design review
+
+*Coding standards for JavaScript
+
+*Checklist for code review
+
+*Source Control (repo w/ contributors, pull request/commit steps, merging)
+
+What is your Definition of Ready (e.g. SMART or INVEST, 
+
+dependencies on other PBIs have been met/implemented,
+
+ groomed as sprintable)
+
+*Definition of Done
+
+(e.g. designed{e.g. sequence or interaction diagram}, built, 
+
+reviewed {meets coding standards, fully implements 
+
+design, follows good coding practices}, tested {happy path and all known unhappy paths}, committed {the code and the tests})
+
+*Estimation technique (Planning poker?) for sprint planning
+
+*How you organize and run your sprint backlog and sprint board
+
+How will you demo your potentially shippable product
+
+* Tools you will use (VS, GitHub, Trello/Jira, LucidCharts, ????)
