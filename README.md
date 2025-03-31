@@ -1,4 +1,4 @@
-# BUC-IT
+# BUC-5
 Spring 2025 - Software Engineering 1 Semester Project
 
 ## Vision
