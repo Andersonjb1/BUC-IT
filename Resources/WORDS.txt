@@ -3,8 +3,6 @@ abaft
 abase
 abate
 abbey
-
-
 abide
 abler
 abode
@@ -135,7 +133,6 @@ asset
 aster
 astir
 atlas
-
 atoms
 atone
 attar
@@ -176,13 +173,11 @@ baker
 bales
 balls
 balmy
-
 bands
 bandy
 bangs
 banjo
 banks
-
 barbs
 bards
 bared
@@ -215,7 +210,6 @@ beans
 beard
 bears
 beast
-
 beech
 beets
 befit
@@ -726,7 +720,6 @@ dices
 dicta
 diets
 digit
-
 dimes
 dimly
 dined
@@ -829,7 +822,6 @@ dwarf
 dwell
 dwelt
 dying
-
 eager
 eagle
 earls
@@ -1275,7 +1267,6 @@ handy
 hangs
 happy
 hardy
-
 hares
 harms
 harps
@@ -1602,7 +1593,6 @@ lures
 lurid
 lurks
 lusts
-
 lutes
 lying
 lymph
@@ -1749,9 +1739,7 @@ musky
 musty
 muted
 mutes
-
 myths
-
 nails
 naive
 naked
@@ -1909,7 +1897,6 @@ peers
 pelts
 penal
 pence
-
 penny
 peons
 perch
@@ -2046,7 +2033,6 @@ puree
 purer
 purge
 purse
-
 putty
 quack
 quaff
@@ -2671,7 +2657,6 @@ taboo
 tacit
 tacks
 tails
-
 taken
 takes
 tales
