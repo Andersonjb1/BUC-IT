@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    gap: 5px;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.key:hover {
+    background-color: #b0b0b0;
+    transform: scale(1.1);
+}
+
+.key.correct {
+    background-color: #6aaa64; /* Green for correct letter */
+}
+
+.key.present {
+    background-color: #b59f3b; /* Yellow for present but wrong position */
+}
+
+.key.absent {
+    background-color: #787c7e; /* Gray for absent letter */
+}
