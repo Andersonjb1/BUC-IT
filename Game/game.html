@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BUC 5 - Game</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="stylesheet" href="style/game.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="frame">
+    <i class="fa-solid fa-circle-question help-icon" onclick="document.getElementById('helpModal').style.display='block'"></i>
+    
+    <input
+      type="text"
+      id="word-input"
+      maxlength="5"
+      class="word-input"
+      placeholder="Guess here"
+    />
+
+    <button class="play-again-button" onclick="location.reload();">
+      Play Again
+    </button>
+  </div>
+
+  <div id="helpModal" class="help-menu">
+    <div class="help-menu-content">
+      <span class="close-button" onclick="document.getElementById('helpModal').style.display='none'">&times;</span>
+    </div>
+  </div>
+
+  <script src="script/main.js"></script>
+</body>
+</html>
