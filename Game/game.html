@@ -6,10 +6,13 @@
   <title>BUC 5 - Game</title>
   <link rel="stylesheet" href="style/main.css" />
   <link rel="stylesheet" href="style/game.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <div class="frame">
+    <i class="fa-solid fa-circle-question help-icon" onclick="document.getElementById('helpModal').style.display='block'"></i>
+    
     <div class="grid">
       <!-- line one -->
       <div class="cell"></div>
@@ -48,7 +51,6 @@
       <div class="cell"></div>
       <div class="cell"></div>
     </div>
-    
     <label for="word-input" class="input-label">Enter your 5-letter guess:</label>
     <input
       type="text"
@@ -102,6 +104,49 @@
         <button class="key wide">⌫</button>
       </div>
     </div>
+
+    <button class="play-again-button" onclick="location.reload();">
+      Play Again
+    </button>
   </div>
+
+  <div id="helpModal" class="help-menu">
+    <div class="help-menu-content">
+      <span class="close-button" onclick="document.getElementById('helpModal').style.display='none'">&times;</span>
+      <h1>How to Play</h1>
+      <p>Guess the Wordle in 6 tries.</p>
+      <ul>
+        <li>Each guess must be a valid 5-letter word.</li>
+        <li>The color of the tiles will change to show how close your guess was to the word.</li>
+      </ul>
+      <h3>Examples</h3>
+      <div class="example">
+        <div class="cell">B</div>
+        <div class="cell">U</div>
+        <div class="cell">C</div>
+        <div class="cell">K</div>
+        <div class="cell">Y</div>
+      </div>
+      <p><strong>B</strong> is in the word and in the correct spot.</p>
+      <div class="example">
+        <div class="cell">L</div>
+        <div class="cell">I</div>
+        <div class="cell">G</div>
+        <div class="cell">H</div>
+        <div class="cell">T</div>
+      </div>
+      <p><strong>I</strong> is in the word but in the wrong spot.</p>
+      <div class="example">
+        <div class="cell">R</div>
+        <div class="cell">O</div>
+        <div class="cell">G</div>
+        <div class="cell">U</div>
+        <div class="cell">E</div>
+      </div>
+      <p><strong>U</strong> is not in the word in any spot.</p>
+    </div>
+  </div>
+
+  <script src="script/main.js"></script>
 </body>
 </html>
