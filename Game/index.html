@@ -4,83 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BUC 5</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .frame {
-      width: 90vw;
-      max-width: 400px;
-      height: 90vh;
-      max-height: 800px;
-      border: 10px solid #00053E;
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-      background-color: white;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Top and bottom sections are spaced */
-      align-items: center;
-    }
-    /* Top Section */
-    .top-section {
-      width: 100%;
-      text-align: center;
-    }
-    /* Scale logo down to about 75% (from 150px to ~110px) */
-    #logo {
-      width: 110px;
-      margin-bottom: 20px;
-    }
-    /* Main header "BUC 5" using original style */
-    .header {
-      font-size: 80px;
-      font-weight: bold;
-      color: #00053E;
-      text-shadow: -3px -3px 0 #FFC72C, 3px -3px 0 #FFC72C,
-                   -3px 3px 0 #FFC72C, 3px 3px 0 #FFC72C;
-      margin: 0;
-    }
-    
-    /* Description text made a bit smaller and with reduced bottom margin */
-    .description {
-      font-size: 24px;
-      color: #000000;
-      margin: 10px 40px 20px;
-      text-align: center;
-    }
-    /* Bottom section for the Play button. Add a little bottom margin so the button is anchored up from the border */
-    .bottom-section {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-    /* Updated button style */
-    .button {
-      padding: 15px 30px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #fff;
-      background-color: #00053E;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    #current-date {
-      margin-top: 24px; /* Add spacing above the date */
-      font-size: 20px;  /* Optional: Adjust font size */
-      color: #555;      /* Optional: Change text color */
-    }
-  </style>
+  <link rel="stylesheet" href="style/main.css" />
 </head>
 <body>
   <div class="frame">
@@ -103,14 +27,6 @@
     <!-- Today's Date -->
     <p> <span id="current-date"></span></p>
   </div>
-
-  <script>
-    window.onload = function () {
-        const now = new Date();
-        const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: Full month, day, year
-        const formattedDate = now.toLocaleDateString('en-US', options);
-        document.getElementById("current-date").textContent = formattedDate;
-    };
-</script>
+  <script src="script/main.js"></script>
 </body>
 </html>
