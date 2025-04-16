@@ -31,3 +31,49 @@ body {
         -3px  3px 0 #FFC72C,
             3px  3px 0 #FFC72C;
 }
+
+
+/* Top Section */
+.top-section {
+  width: 100%;
+  text-align: center;
+}
+/* Scale logo down to about 75% (from 150px to ~110px) */
+#logo {
+  width: 110px;
+  margin-bottom: 20px;
+}
+/* Main header "BUC 5" using original style */
+
+
+/* Description text made a bit smaller and with reduced bottom margin */
+.description {
+  font-size: 24px;
+  color: #000000;
+  margin: 10px 40px 20px;
+  text-align: center;
+}
+/* Bottom section for the Play button. Add a little bottom margin so the button is anchored up from the border */
+.bottom-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+/* Updated button style */
+.button {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #00053E;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#current-date {
+  margin-top: 24px; /* Add spacing above the date */
+  font-size: 20px;  /* Optional: Adjust font size */
+  color: #555;      /* Optional: Change text color */
+}
