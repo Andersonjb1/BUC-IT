@@ -64,4 +64,5 @@ function initDate() {
   window.onload = function () {
     initDate();
     initGameInput();
-  };
+  }; 
+
