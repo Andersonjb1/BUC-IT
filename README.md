@@ -15,13 +15,12 @@ BUC-5 is an ETSU-themed daily word game inspired by Wordle, designed for student
 - Uploaded to GitHub
 
 ## Definition of Ready
--	Clear description or user story
--	Acceptance Criteria defined
--	Story linked to a goal or value that it will bring to the project
--	Requirements analysis has been performed to ensure the PBI meets the SMART criteria (Specific, Measurable, Achievable, Relevant, Timely)
--	Small enough to be completed within a single sprint
--	Ideally should represent complete and user-visible feature (vertically sliced)
--	The team agrees that it is ready and these conditions are met
+- Clear description or user story
+- Acceptance Criteria defined
+- Story linked to a goal or value that it will bring to the project
+- The goal can be verified and validated
+- Small enough to be completed within a single sprint
+- The team agrees that it is ready and these conditions are met
 
 ## Game Constraints
 - Must be single human player (no multi-player games, AI player is okay)

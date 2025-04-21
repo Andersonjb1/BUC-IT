@@ -20,9 +20,9 @@
     color: white;
     border-radius: 8px;
     cursor: pointer;
-}
+  }
 
-.help-icon {
+  .help-icon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -31,9 +31,9 @@
     background: none;
     border: none;
     color: #00053E;
-}
+  }
   
-.modal {
+  .help-menu {
     display: none;
     position: fixed;
     z-index: 100;
@@ -43,9 +43,9 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-}
+  }
   
-.modal-content {
+  .help-menu-content {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
@@ -53,25 +53,20 @@
     width: 80%;
     max-width: 400px;
     position: relative;
-}
+  }
 
-.modal-content h1, h2, h3, p {
+  .help-menu-content h1, h3, p {
     text-align: center;
-}
+  }
   
-.example {
+  .example {
     display: flex;
     gap: 5px;
     justify-content: center;
     margin: 10px 0;
-}
+  }
 
-.play-again-button {
-    display: block;
-    margin: 1rem auto;
-}
-
-.close-button {
+  .close-button {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -79,7 +74,7 @@
     font-weight: bold;
     cursor: pointer;
     color: #000;
-}
+  }
 
 .grid {
     display: grid;
