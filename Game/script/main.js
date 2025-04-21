@@ -51,3 +51,16 @@ wordInput.addEventListener("keydown", function (e) {
     this.value = "";
   }
 });
+
+//when game.html is first loaded how-to-play is displayed
+document.addEventListener('DOMContentLoaded', () => {
+    const hasSeenHelp = sessionStorage.getItem('hasSeenHelp');
+  
+    if (!hasSeenHelp) { // It will not display automatically again unless the page is closed
+      const helpModal = document.getElementById('helpModal');
+      if (helpModal) {
+        helpModal.style.display = 'block';
+        sessionStorage.setItem('hasSeenHelp', 'true');
+      }
+    }
+  });

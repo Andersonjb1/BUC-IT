@@ -11,6 +11,7 @@
 <body>
 
   <div class="frame">
+    <!-- Help icon -->
     <i class="fa-solid fa-circle-question help-icon" onclick="document.getElementById('helpModal').style.display='block'"></i>
     
     <div class="grid">
@@ -110,6 +111,7 @@
     </button>
   </div>
 
+  <!-- How to play pop-up window -->
   <div id="helpModal" class="help-menu">
     <div class="help-menu-content">
       <span class="close-button" onclick="document.getElementById('helpModal').style.display='none'">&times;</span>
@@ -119,6 +121,7 @@
         <li>Each guess must be a valid 5-letter word.</li>
         <li>The color of the tiles will change to show how close your guess was to the word.</li>
       </ul>
+      <!-- Reuses cell styling for examples -->
       <h3>Examples</h3>
       <div class="example">
         <div class="cell">B</div>
