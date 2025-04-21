@@ -1,11 +1,3 @@
-//index html script for date
-window.onload = function () {
-    const now = new Date();
-    const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: Full month, day, year
-    const formattedDate = now.toLocaleDateString('en-US', options);
-    document.getElementById("current-date").textContent = formattedDate;
-};
-
 //script for answers
 const wordInput = document.getElementById("word-input");
 const gridCells = document.querySelectorAll(".grid .cell");
@@ -13,6 +5,20 @@ const answer = "light"; // Replace with your dynamic or static answer
 let currentRow = 0;
 const maxAttempts = 6;
 const wordLength = 5;
+
+// Function for displaying win or lose pop-ups
+function showModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.style.display = 'block';
+}
+
+//index html script for date
+window.onload = function () {
+    const now = new Date();
+    const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: Full month, day, year
+    const formattedDate = now.toLocaleDateString('en-US', options);
+    document.getElementById("current-date").textContent = formattedDate;
+};
 
 // Restrict input to letters only and 5 characters max
 wordInput.addEventListener("input", function () {
@@ -36,7 +42,7 @@ wordInput.addEventListener("keydown", function (e) {
 
     // Check against the answer
     if (guess === answer) {
-      alert("🎉 You guessed it!");
+      showModal('winModal');
       wordInput.disabled = true;
       return;
     }
@@ -45,7 +51,8 @@ wordInput.addEventListener("keydown", function (e) {
 
     if (currentRow >= maxAttempts) {
       wordInput.disabled = true;
-      alert("❌ No more attempts! The correct word was: " + answer.toUpperCase());
+      document.getElementById("correctWord").textContent = answer.toUpperCase();
+      showModal('loseModal');
     }
 
     this.value = "";
