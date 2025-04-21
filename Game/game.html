@@ -11,6 +11,7 @@
 <body>
 
   <div class="frame">
+    <!-- Help icon -->
     <i class="fa-solid fa-circle-question help-icon" onclick="document.getElementById('helpModal').style.display='block'"></i>
     
     <div class="grid">
@@ -104,14 +105,11 @@
         <button class="key wide">⌫</button>
       </div>
     </div>
-
-    <button class="play-again-button" onclick="location.reload();">
-      Play Again
-    </button>
   </div>
 
-  <div id="helpModal" class="help-menu">
-    <div class="help-menu-content">
+  <!-- How to play pop-up window -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
       <span class="close-button" onclick="document.getElementById('helpModal').style.display='none'">&times;</span>
       <h1>How to Play</h1>
       <p>Guess the Wordle in 6 tries.</p>
@@ -119,6 +117,7 @@
         <li>Each guess must be a valid 5-letter word.</li>
         <li>The color of the tiles will change to show how close your guess was to the word.</li>
       </ul>
+      <!-- Reuses cell styling for examples -->
       <h3>Examples</h3>
       <div class="example">
         <div class="cell">B</div>
@@ -144,6 +143,30 @@
         <div class="cell">E</div>
       </div>
       <p><strong>U</strong> is not in the word in any spot.</p>
+    </div>
+  </div>
+
+  <!-- Win Pop-up -->
+  <div id="winModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="document.getElementById('winModal').style.display='none'">&times;</span>
+      <h2>🎉 You guessed it!</h2>
+      <p>Congratulations! You got the word right!</p>
+      <button class="play-again-button" onclick="location.reload();">
+        Play Again
+      </button>
+    </div>
+  </div>
+
+  <!-- Lose Pop-up -->
+  <div id="loseModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="document.getElementById('loseModal').style.display='none'">&times;</span>
+      <h2>❌ No more attempts! Do better!</h2>
+      <p>The correct word was: <span id="correctWord"></span></p>
+      <button class="play-again-button" onclick="location.reload();">
+        Play Again
+      </button>
     </div>
   </div>
 
