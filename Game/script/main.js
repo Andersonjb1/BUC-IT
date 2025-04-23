@@ -18,7 +18,7 @@ let currentRow = 0;
 const maxAttempts = 6;
 const wordLength = 5;
 
-/ Restrict input to letters only and 5 characters max
+// Restrict input to letters only and 5 characters max
 wordInput.addEventListener("input", function () {
 this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase().slice(0, wordLength);
 });
@@ -44,8 +44,8 @@ if (e.key === "Enter") {
   }
 
   // Check against the answer
-  if (guess === answer) {
-    alert("🎉 You guessed it!");
+   if (guess === answer) {
+    showModal('winModal');
     wordInput.disabled = true;
     return;
   }
@@ -63,22 +63,30 @@ if (e.key === "Enter") {
 
 
 function changeBgColor(currentRow, currentCol, degree) {
-// calculate the one‐dimensional index into your gridCells NodeList
-const index = currentRow * wordLength + currentCol;
-const cell  = gridCells[index];
-if (!cell) return;
+  // 1) Color the grid cell
+  const index = currentRow * wordLength + currentCol;
+  const cell  = gridCells[index];
+  if (!cell) return;
 
-// clear any previous state‐classes
-cell.classList.remove('correct', 'present', 'absent');
+  // pick the right class name
+  const state = degree === 2
+    ? 'correct'
+    : degree === 1
+      ? 'present'
+      : 'absent';
 
-// add the right state‐class
-if (degree === 2) {
-  cell.classList.add('correct');  // green
-} else if (degree === 1) {
-  cell.classList.add('present');  // yellow
-} else {
-  cell.classList.add('absent');   // grey
-}
+  // apply to the cell
+  cell.classList.remove('correct','present','absent');
+  cell.classList.add(state);
+
+  // 2) Mirror onto the keyboard
+  const letter = cell.textContent.trim();
+  for (const keyEl of document.querySelectorAll('.key')) {
+    if (keyEl.textContent.trim() === letter) {
+      keyEl.classList.remove('correct','present','absent');
+      keyEl.classList.add(state);
+    }
+  }
 }
 
 
