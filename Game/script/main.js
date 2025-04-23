@@ -18,21 +18,7 @@ let currentRow = 0;
 const maxAttempts = 6;
 const wordLength = 5;
 
-// Function for displaying win or lose pop-ups
-function showModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) modal.style.display = 'block';
-}
-
-//index html script for date
-window.onload = function () {
-    const now = new Date();
-    const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: Full month, day, year
-    const formattedDate = now.toLocaleDateString('en-US', options);
-    document.getElementById("current-date").textContent = formattedDate;
-};
-
-// Restrict input to letters only and 5 characters max
+/ Restrict input to letters only and 5 characters max
 wordInput.addEventListener("input", function () {
 this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase().slice(0, wordLength);
 });
@@ -40,7 +26,7 @@ this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase().slice(0, wordLen
 wordInput.addEventListener("keydown", function (e) {
 if (e.key === "Enter") {
   const guess = this.value.toLowerCase();
-
+  
   if (guess.length !== wordLength || !/^[a-zA-Z]+$/.test(guess)) {
     alert("Please enter a valid 5-letter word.");
     return;
@@ -52,34 +38,61 @@ if (e.key === "Enter") {
     gridCells[startIndex + i].textContent = guess[i].toUpperCase();
   }
 
+  // Color each letter
+  for (let i = 0; i < wordLength; i++) {
+    checkAndColorLetter(i, guess[i]);
+  }
+
   // Check against the answer
   if (guess === answer) {
-    showModal('winModal');
+    alert("🎉 You guessed it!");
     wordInput.disabled = true;
     return;
   }
-  
+
   currentRow++;
 
-   if (currentRow >= maxAttempts) {
-     wordInput.disabled = true;
-     document.getElementById("correctWord").textContent = answer.toUpperCase();
-     showModal('loseModal');
-    }
+  if (currentRow >= maxAttempts) {
+    wordInput.disabled = true;
+    alert("❌ No more attempts! The correct word was: " + answer.toUpperCase());
+  }
 
   this.value = "";
 }
 });
 
-// when game.html is first loaded how-to-play is displayed
-document.addEventListener('DOMContentLoaded', () => {
-  const hasSeenHelp = sessionStorage.getItem('hasSeenHelp');
 
-  if (!hasSeenHelp) {
-    const helpModal = document.getElementById('helpModal');
-    if (helpModal) {
-      helpModal.style.display = 'block';
-      sessionStorage.setItem('hasSeenHelp', 'true');
-    }
-  }
-});
+function changeBgColor(currentRow, currentCol, degree) {
+// calculate the one‐dimensional index into your gridCells NodeList
+const index = currentRow * wordLength + currentCol;
+const cell  = gridCells[index];
+if (!cell) return;
+
+// clear any previous state‐classes
+cell.classList.remove('correct', 'present', 'absent');
+
+// add the right state‐class
+if (degree === 2) {
+  cell.classList.add('correct');  // green
+} else if (degree === 1) {
+  cell.classList.add('present');  // yellow
+} else {
+  cell.classList.add('absent');   // grey
+}
+}
+
+
+function checkAndColorLetter(col, letter) {
+const answerArr = answer.split('');
+
+if (letter === answerArr[col]) {
+  // right letter, right place
+  changeBgColor(currentRow, col, 2);
+} else if (answerArr.includes(letter)) {
+  // right letter, wrong place
+  changeBgColor(currentRow, col, 1);
+} else {
+  // letter not in word
+  changeBgColor(currentRow, col, 0);
+}
+};
