@@ -20,9 +20,9 @@
     color: white;
     border-radius: 8px;
     cursor: pointer;
-  }
+}
 
-  .help-icon {
+.help-icon {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -31,9 +31,9 @@
     background: none;
     border: none;
     color: #00053E;
-  }
+}
   
-  .help-menu {
+.modal {
     display: none;
     position: fixed;
     z-index: 100;
@@ -43,9 +43,9 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-  }
+}
   
-  .help-menu-content {
+.modal-content {
     background-color: #fff;
     margin: 15% auto;
     padding: 20px;
@@ -53,20 +53,25 @@
     width: 80%;
     max-width: 400px;
     position: relative;
-  }
+}
 
-  .help-menu-content h1, h3, p {
+.modal-content h1, h2, h3, p {
     text-align: center;
-  }
+}
   
-  .example {
+.example {
     display: flex;
     gap: 5px;
     justify-content: center;
     margin: 10px 0;
-  }
+}
 
-  .close-button {
+.play-again-button {
+    display: block;
+    margin: 1rem auto;
+}
+
+.close-button {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -74,7 +79,7 @@
     font-weight: bold;
     cursor: pointer;
     color: #000;
-  }
+}
 
 .grid {
     display: grid;
@@ -97,6 +102,22 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+/*uses same colors as key but for grid*/
+/* Grid‐cell color states */
+.cell.correct {
+    background-color: #6aaa64;
+    color: black;
+}
+.cell.present {
+    background-color: #4682b4;
+    color: black
+}
+.cell.absent {
+    background-color: #a4a7aa;
+    color: white;
+}
+  
 
 /* Keyboard styling */
 .keyboard {
@@ -155,15 +176,30 @@
 /* Color states for future use - not super dark */
 .key.correct {
     background-color: #6aaa64;
-    color: white;
+    color: black;
 }
 
 .key.present {
-    background-color: #c9b458;
-    color: white;
+    background-color: #4682b4;
+    color: black;
 }
 
 .key.absent {
     background-color: #a4a7aa;
     color: white;
 }
+
+/*
+.cell.correct {
+    background-color: #6aaa64;
+    color: black;
+}
+.cell.present {
+    background-color: #4682b4;
+    color: black
+}
+.cell.absent {
+    background-color: #a4a7aa;
+    color: white;
+}
+*/
