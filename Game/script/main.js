@@ -125,4 +125,4 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem('hasSeenHelp', 'true');
     }
   }
-}
+});
