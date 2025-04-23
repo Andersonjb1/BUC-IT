@@ -176,15 +176,30 @@
 /* Color states for future use - not super dark */
 .key.correct {
     background-color: #6aaa64;
-    color: white;
+    color: black;
 }
 
 .key.present {
-    background-color: #c9b458;
-    color: white;
+    background-color: #4682b4;
+    color: black;
 }
 
 .key.absent {
     background-color: #a4a7aa;
     color: white;
 }
+
+/*
+.cell.correct {
+    background-color: #6aaa64;
+    color: black;
+}
+.cell.present {
+    background-color: #4682b4;
+    color: black
+}
+.cell.absent {
+    background-color: #a4a7aa;
+    color: white;
+}
+*/
