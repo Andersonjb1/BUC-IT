@@ -111,4 +111,17 @@ if (letter === answerArr[col]) {
   // letter not in word
   changeBgColor(currentRow, col, 0);
 }
+
 };
+
+// when game.html is first loaded how-to-play is displayed
+document.addEventListener('DOMContentLoaded', () => {
+  const hasSeenHelp = sessionStorage.getItem('hasSeenHelp');
+
+  if (!hasSeenHelp) {
+    const helpModal = document.getElementById('helpModal');
+    if (helpModal) {
+      helpModal.style.display = 'block';
+      sessionStorage.setItem('hasSeenHelp', 'true');
+    }
+  }
