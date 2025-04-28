@@ -61,29 +61,32 @@ text-align: center;
 
 /* Bottom section for the Play button. Add a little bottom margin so the button is anchored up from the border */
 .bottom-section {
-width: 100%;
-display: flex;
-justify-content: center;
-margin-bottom: 0.625rem; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.625rem;
 }
 
 /* Button */
 .button {
-padding: 0.938rem 1.875rem; 
-font-size: clamp(1rem, 3vw, 1.25rem);
-font-weight: bold;
-color: #fff;
-background-color: #00053E;
-border: none;
-border-radius: 0.625rem;
-cursor: pointer;
+  width: min(70%, 250px);
+  padding: 0.938rem 1.875rem; 
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: bold;
+  color: #fff;
+  background-color: #00053E;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
 }
 
 /* Current Date */
 #current-date {
-margin-top: 1.5rem;
-font-size: clamp(1rem, 3vw, 1.25rem);
-color: #555;
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: #555;
 }
 
 /* Specifically affects mobile viewports */
