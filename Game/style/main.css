@@ -71,7 +71,7 @@ text-align: center;
 
 /* Button */
 .button {
-  width: min(70%, 250px);
+  width: min(45%, 200px);
   padding: 0.938rem 1.875rem; 
   font-size: clamp(1rem, 3vw, 1.25rem);
   font-weight: bold;
