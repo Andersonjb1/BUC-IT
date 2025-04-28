@@ -1,79 +1,108 @@
-
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200vh;
-
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+
 .frame {
-    width: 400px;
-    height: 800px;
-    border: 10px solid #00053E;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-.header {
-    font-size: 80px;
-    font-weight: bold;
-    color: #00053E;
-    text-shadow: 
-        -3px -3px 0 #FFC72C,  
-            3px -3px 0 #FFC72C,
-        -3px  3px 0 #FFC72C,
-            3px  3px 0 #FFC72C;
+  width: min(90%, 400px);
+  height: min(90vh, 800px);
+  border: 0.625rem solid #00053E;
+  box-shadow: 0.313rem 0.313rem 0.938rem rgba(0, 0, 0, 0.5);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
 }
 
+/* Spacer included for padding at the top and bottom of frame. Acts as an invisible div that ensure proper spacing */
+.spacer {
+  flex: 1;
+}
+
+.header {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: bold;
+  color: #00053E;
+  text-shadow: 
+      -0.188rem -0.188rem 0 #FFC72C,
+       0.188rem -0.188rem 0 #FFC72C,
+      -0.188rem  0.188rem 0 #FFC72C,
+       0.188rem  0.188rem 0 #FFC72C;
+}
 
 /* Top Section */
 .top-section {
-  width: 100%;
-  text-align: center;
+width: 100%;
+text-align: center;
 }
+
 /* Scale logo down to about 75% (from 150px to ~110px) */
 #logo {
-  width: 110px;
-  margin-bottom: 20px;
+width: clamp(80px, 25vw, 110px);
+margin-bottom: 1.25rem;
 }
-/* Main header "BUC 5" using original style */
 
-
-/* Description text made a bit smaller and with reduced bottom margin */
+/* Description */
 .description {
-  font-size: 24px;
-  color: #000000;
-  margin: 10px 40px 20px;
-  text-align: center;
+font-size: clamp(1rem, 3vw, 1.5rem); 
+color: #000000;
+margin: 0.625rem 2.5rem 1.25rem; 
+text-align: center;
 }
+
 /* Bottom section for the Play button. Add a little bottom margin so the button is anchored up from the border */
 .bottom-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-/* Updated button style */
-.button {
-  padding: 15px 30px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #00053E;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 0.625rem; 
 }
 
+/* Button */
+.button {
+padding: 0.938rem 1.875rem; 
+font-size: clamp(1rem, 3vw, 1.25rem);
+font-weight: bold;
+color: #fff;
+background-color: #00053E;
+border: none;
+border-radius: 0.625rem;
+cursor: pointer;
+}
+
+/* Current Date */
 #current-date {
-  margin-top: 24px; /* Add spacing above the date */
-  font-size: 20px;  /* Optional: Adjust font size */
-  color: #555;      /* Optional: Change text color */
+margin-top: 1.5rem;
+font-size: clamp(1rem, 3vw, 1.25rem);
+color: #555;
+}
+
+/* Specifically affects mobile viewports */
+@media (max-width: 768px) {
+  /* Sizes adjusted to make mobile look more consistent with desktop */
+  .header {
+    font-size: clamp(4rem, 14vw, 5rem);
+    text-shadow: 
+        -0.125rem -0.125rem 0 #FFC72C,
+         0.125rem -0.125rem 0 #FFC72C,
+        -0.125rem  0.125rem 0 #FFC72C,
+         0.125rem  0.125rem 0 #FFC72C;
+  }
+
+  .description {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  #logo {
+    width: clamp(90px, 30vw, 110px); 
+  }
 }
