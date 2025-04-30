@@ -151,3 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Add functionality for the onscreen keyboard
+document.querySelectorAll('.key').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const key = btn.textContent.trim();
+
+    if (key === '⌫') {
+      // Simulate Backspace key
+      const backspaceEvent = new KeyboardEvent('keydown', { key: 'Backspace' });
+      document.dispatchEvent(backspaceEvent);
+    } else if (key === 'ENTER') {
+      // Simulate Enter key
+      const enterEvent = new KeyboardEvent('keydown', { key: 'Enter' });
+      document.dispatchEvent(enterEvent);
+    } else if (/^[A-Z]$/.test(key)) {
+      // Simulate letter key
+      const letterEvent = new KeyboardEvent('keydown', { key });
+      document.dispatchEvent(letterEvent);
+    }
+  });
+});
