@@ -1,4 +1,6 @@
 // index html script for date
+let timerInterval = null;
+
 window.onload = function () {
   const now = new Date();
   const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: Full month, day, year
@@ -66,9 +68,11 @@ function submitGuess() {
   checkAndColorLetter(guess);
 
   // Check for win
-  if (guess === answer) {
+  if (guess == answer) {
     showModal('winModal');
     document.removeEventListener('keydown', arguments.callee); // Stop further input
+    clearInterval(timerInterval);
+
     return;
   }
 
@@ -160,7 +164,7 @@ function startTwoMinuteTimer() {
     const timerElement = document.getElementById("timer");
     let timeLeft = 120;
 
-    const interval = setInterval(() => {
+     timerInterval = setInterval(() => {
       const minutes = Math.floor(timeLeft / 60);
       const seconds = timeLeft % 60;
       timerElement.textContent = `Time left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
