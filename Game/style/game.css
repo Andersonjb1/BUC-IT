@@ -35,6 +35,36 @@
     color: #00053E;
 }
 
+/* Style for the Back to Home button with a logo */
+.back-home-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem; /* Reduce padding as there's no text */
+    font-size: 1rem; /* Still set a font size for the icon */
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #f0f0f0;
+    color: #00053E;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Center the icon horizontally */
+    align-items: center;  /* Center the icon vertically */
+    width: auto;        /* Adjust width to fit content */
+    height: auto;       /* Adjust height to fit content */
+    z-index: 10;
+  }
+  
+  .back-home-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .back-home-button i {
+    font-size: 1.5rem; /* Adjust the size of the home icon */
+  }
+  
+
+
 .modal {
     display: none;
     position: fixed;
