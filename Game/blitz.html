@@ -14,11 +14,10 @@
     <div class="spacer"></div>
     <!-- Help icon -->
     <i class="fa-solid fa-circle-question help-icon" onclick="document.getElementById('helpModal').style.display='block'"></i>
-
     <button class="back-home-button" onclick="window.location.href='index.html'">
       <i class="fa-solid fa-house"></i>
     </button> 
-
+    <h1 id="timer">Time left: 2:00</h1>
     
     <div class="grid">
       <!-- line one -->
@@ -116,6 +115,7 @@
       <ul>
         <li>Each guess must be a valid 5-letter word.</li>
         <li>The color of the tiles will change to show how close your guess was to the word.</li>
+        <li>Blitz mode: You only get 2 minutes to guess the word.</li>
       </ul>
       <!-- Reuses cell styling for examples -->
       <h3>Examples</h3>
@@ -170,6 +170,6 @@
     </div>
   </div>
 
-  <script src="script/main.js"></script>
+  <script src="script/blitz.js"></script>
 </body>
 </html>
